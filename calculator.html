@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <style>
+      .row{
+        margin-top: 10px;
+      }
+      .card{
+        border: none;
+        border-radius: 20px;
+         background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
+         margin-top: 10px;
+      }
+      .btn-dark{
+        border: none;
+        border-radius: 3px;
+        width: 3rem;
+        background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
+
+        
+      }
+      .btn-primary{
+        background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
+        border: none;
+      }
+      h5{
+        color: azure;
+        text-align: center;
+      }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="card" style="width:20rem">
+          <div class="card-body">
+            <h5>CALCULATOR</h5>
+            <div class="row">
+              <div class="col-12">
+                <input type="text" class="form-control" placeholder="0" >
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <button class="btn btn-dark">C</button>
+                
+              </div>
+              <div class="col-3">
+                <button class="btn btn-dark">%</button>
+                
+              </div>
+              <div class="col-3">
+                <button class="btn btn-dark">00</button>
+                
+              </div>
+              <div class="col-3">
+                <button class="btn btn-primary">000</button>
+                
+              </div>
+              
+                
+            
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <button type="button" class="btn btn-dark">7</button>
+              </div>
+              <div class="col-3"> <button class="btn btn-dark">8</button></div>
+              <div class="col-3"> <button class="btn btn-dark">9</button></div>
+              <div class="col-3"> <button class="btn btn-dark">/</button></div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <button type="button" class="btn btn-dark">4</button>
+              </div>
+              <div class="col-3"> <button class="btn btn-dark">5</button></div>
+              <div class="col-3"> <button class="btn btn-dark">6</button></div>
+              <div class="col-3"> <button class="btn btn-dark">*</button></div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <button type="button" class="btn btn-dark">1</button>
+              </div>
+              <div class="col-3"> <button class="btn btn-dark">2</button></div>
+              <div class="col-3"> <button class="btn btn-dark">3</button></div>
+              <div class="col-3"> <button class="btn btn-dark">-</button></div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <button type="button" class="btn btn-dark">0</button>
+              </div>
+              <div class="col-3"> <button class="btn btn-dark">.</button></div>
+              <div class="col-3"> <button class="btn btn-dark">=</button></div>
+              <div class="col-3"> <button class="btn btn-dark">+</button></div>
+            </div>
+            
+          </div>
+        </div>
+        <!-- <button class="new">set user</button>
+        <h1></h1> -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <script >
+     let mybutton=document.querySelector(".new");
+     let myheading =document.querySelector("h1");
+    /*function setusername(){
+      const myname=prompt("please enter your name");  //function declaration
+      localStorage.setItem("name",myname);
+      myheading.textContent=`you are cool,${myname}`;
+
+    }
+    if (!localStorage.getItem("name")) {                    //intialization code
+      setusername();
+    } else {
+      const storedName = localStorage.getItem("name");
+      myheading.textContent = `you are cool, ${storedName}`;
+    }
+    
+    
+    function setUserName() {
+      const myName = prompt("Please enter your name.");
+      if (!myName) {
+        setUserName();
+      } else {
+        localStorage.setItem("name", myName);
+        myheading.textContent = `Mozilla is cool, ${myName}`;
+      }
+    }
+    mybutton.onclick=()=>{
+      setUserName();
+    };*/
+    let string="";
+let buttons=document.querySelectorAll("button");
+Array.from(buttons).forEach((button)=>{
+  button.addEventListener("click",(e)=>{
+    if(e.target.innerHTML=='='){
+      string=eval(string);
+      document.querySelector('input').value=string;
+    }
+    else if(e.target.innerHTML=='C'){
+      string="";
+      document.querySelector('input').value=string;
+    }
+else{
+  console.log(e.target)
+string = string+e.target.innerHTML
+document.querySelector('input').value=string;
+}
+  })
+})
+  
+
+  
+
+
+function add(){
+
+
+}
+      
+
+    </script>
+
+
+    
+
+      
+
+
+</body>
+</html>
